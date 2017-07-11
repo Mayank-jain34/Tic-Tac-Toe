@@ -30,7 +30,7 @@ io.on('connection', function (socket) {
     var opponent = gameInfo.firstPlayer === socket.id
                 ? gameInfo.secondPlayer
                 : gameInfo.firstPlayer;
-    socket.to(opponent).emit("turn complete", gameInfo.boardStatus);
+    socket.to(opponent).emit("opponent's turn complete", gameInfo.boardStatus);
     if(gameInfo.numberOfTurns >= 5 ) {
       var result = calculateGameResult(gameInfo.boardStatus);
       if(result) {
@@ -52,6 +52,9 @@ io.on('connection', function (socket) {
     if(opponent) {
       var gameId = gamesManager.createGame(socket.id, opponent);
       var symbol1, symbol2;
+      // Maths.random generate numbers between 0 to 1
+      // and Maths.round will give round of that value that is 0 or 1
+      // and that will help us to choose symbols 
       if(Math.round(Math.random())) {
         symbol1 = 'O';
         symbol2 = 'X';
