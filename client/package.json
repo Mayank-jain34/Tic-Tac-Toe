@@ -1,5 +1,5 @@
 {
-  "name": "bidding-app",
+  "name": "tic-tac-toe",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,7 +12,10 @@
     "react-dom": "^15.2.1",
     "socket.io": "^2.0.3",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "react-redux": "^4.4.5",
+    "react-router": "~3.x.x",
+    "redux": "^3.5.2"
   },
   "devDependencies": {},
   "scripts": {
