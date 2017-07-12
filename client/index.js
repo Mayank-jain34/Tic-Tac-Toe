@@ -3,7 +3,6 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import socketHelper from './utils/socketHelper';
 import App from './components/app/AppContainer';
 
