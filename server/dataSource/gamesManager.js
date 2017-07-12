@@ -23,8 +23,8 @@ function gamesManager() {
       games[id].numberOfTurns++;
       return games[id];
     },
-    deleteGame() {
-
+    getGameInfo(id) {
+      return games[id];
     }
   }
 }

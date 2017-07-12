@@ -1,10 +1,3 @@
-const gameStatus = {
-  INITIALIZING,
-  LOADING,
-  PLAYING,
-  GAMEOVER,
-}
-
 function rootReducer(state = {
   playerName : null,
   opponentName : null,
@@ -13,7 +6,7 @@ function rootReducer(state = {
           ['','',''],
           ['','','']
   ],
-  gameStatus : gameStatus.INITIALIZING,
+  gameStatus : 'INITIALIZING',
   symbol : '',
   turn : false,
   gameResult : null
@@ -21,20 +14,21 @@ function rootReducer(state = {
   switch (action.type) {
     case "GAME_STARTED":
       return Object.assign({}, state, {
-        opponentName : action.playerName,
+        opponentName : action.opponentName,
         symbol : action.symbol,
         turn : action.turn,
-        gameStatus : gameStatus.PLAYING
+        gameStatus : 'PLAYING'
       });
     case "GAME_OVER":
       return Object.assign({}, state, {
-        gameStatus : gameStatus.GAMEOVER,
-        gameResult : action.gameResult
+        gameStatus : 'GAMEOVER',
+        gameResult : action.gameResult,
+        turn : false
       })
     case "LOGIN":
       return Object.assign({}, state, {
         playerName : action.playerName,
-        gameStatus : gameStatus.LOADING 
+        gameStatus : 'LOADING'
       });
     case "OPPONENTS_TURN_COMPLETE":
     return Object.assign({}, state, { boardStatus : action.boardStatus, turn : true });
@@ -50,10 +44,10 @@ function rootReducer(state = {
                 ['','',''],
                 ['','','']
               ],
-        gameStatus : gameStatus.INITIALIZING,
+        gameStatus : 'LOADING',
         symbol : '',
         turn : false,
-        gameResult : null 
+        gameResult : null
       });
     default:
       return state;

@@ -5,7 +5,7 @@ export function loginAction(playerName) {
         type: "LOGIN",
         playerName,
         event : {
-            name : "login",
+            name : "player joined",
             data : {
                 playerName
             }
@@ -17,7 +17,7 @@ export function loginAction(playerName) {
 export function turnComplete(cellInfo) {
     return {
         type: "TURN_COMPLETE",
-        cellInfo
+        cellInfo,
         event : {
             name : "turn complete",
             data : {

@@ -1,4 +1,5 @@
-export default function socketHelper(socket, dispatch) {
+export default function socketHelper(socket, store) {
+  let dispatch = store.dispatch;
     socket.on("game start", (symbol, opponentName) => {
       console.error("Game Started", symbol);
       var turn = symbol === 'O' ? true : false;
@@ -19,13 +20,16 @@ export default function socketHelper(socket, dispatch) {
 
     socket.on("game over", (symbol) => {
       var gameResult = null;
-      if(!symbol) {
+      if(!symbol){
+        gameResult = "Opponent Left";
+      } else if(symbol === "DRAW") {
         gameResult = "DRAW";
-      } else if(symbol === this.state.symbol) {
+      } else if(symbol === store.getState().symbol) {
         gameResult = "WON";
       } else {
         gameResult = "LOST";
       }
+      console.error(gameResult)
       dispatch({
           type: "GAME_OVER",
           gameResult
