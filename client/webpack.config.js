@@ -21,20 +21,9 @@ var config = {
             query: {
                presets: ['es2015', 'react']
             }
-         },
-         {
-           test: /\.scss$/,
-            loader: 'style!css!sass?sourceMap'
-         },
-         {
-           test: /\.(jpe?g|gif|png)$/,
-           loader: 'file-loader?emitFile=false&name=[path][name].[ext]'
          }
       ]
    },
-   sassLoader: {
-    sourceMap: true
-    },
 }
 
 module.exports = config;

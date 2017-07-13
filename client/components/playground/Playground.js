@@ -1,6 +1,5 @@
 import React from 'react';
 import Board from '../board/BoardContainer';
-require("./Playground.scss");
 
 class Playground extends React.Component {
   render() {

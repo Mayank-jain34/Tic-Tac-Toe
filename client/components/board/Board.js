@@ -1,6 +1,5 @@
 import React from 'react';
 import Cell from '../cell/Cell';
-require("./Board.scss");
 
 class Board extends React.Component {
   render() {

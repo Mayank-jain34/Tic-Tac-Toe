@@ -1,5 +1,4 @@
 import React from 'react';
-require("./Login.scss");
 
 class Login extends React.Component {
   constructor() {
