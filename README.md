@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 # steps to run
-      - open cmd for server as well as client folder"
-      - run command "npm install" in both open folders separately.
-      - when all packages are installed execute command "npm start in both directories."
-      - then open your browser and open "http://localhost:8080/"
+      - Open command prompt for the server as well as client directories."
+      - Run command "npm install" in both folders separately.
+      - When all packages are installed execute command "npm start" in both directories.
+      - then open two tabs in your browser and open "http://localhost:8080/" in both to enjoy the multiplayer experience 
